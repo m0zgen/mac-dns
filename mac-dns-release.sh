@@ -58,20 +58,21 @@ main() {
         echo "Set Cloudflare and Google DNS"
         networksetup -setdnsservers Wi-Fi 1.1.1.1 8.8.2.2
     elif [[ $1 = "google" ]]; then
-        echo "Set GOOGLE DNS"
+        echo "Set Google DNS"
         networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
     elif [[ $1 = "cloudflare" ]]; then
-        echo "Set GOOGLE DNS"
+        echo "Set Cloudflare DNS"
         networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1
     elif [[ $1 = "bld-kz" ]]; then
-        echo "Set BLD DNS"
-        networksetup -setdnsservers Wi-Fi 212.19.134.52 135.125.204.230 49.12.234.130
+        echo "Set BLD (KZ) DNS"
+        networksetup -setdnsservers Wi-Fi 212.19.134.52 
+        # 188.130.234.184
     elif [[ $1 = "bld" ]]; then
-        echo "Set BLD DNS"
-        networksetup -setdnsservers Wi-Fi 49.12.234.130 135.125.204.230 212.19.134.52 
-    elif [[ $1 = "doh" ]]; then
-        echo "Set DoH (LAB) DNS"
-        networksetup -setdnsservers Wi-Fi 109.234.39.72 
+        echo "Set BLD (EU) DNS"
+        networksetup -setdnsservers Wi-Fi 135.125.204.230 49.12.234.130
+    elif [[ $1 = "a-bld" ]]; then
+        echo "Set A-BLD) DNS"
+        networksetup -setdnsservers Wi-Fi 88.210.11.120 109.234.39.72 
     elif [[ $1 = "-h" ]]; then
             echo -e "Use: with argument - bld or doh if empty will set Cloudflare and Google DNS"
             exit 1
