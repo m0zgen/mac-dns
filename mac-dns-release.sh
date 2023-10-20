@@ -67,12 +67,15 @@ main() {
         echo "Set BLD (KZ) DNS"
         networksetup -setdnsservers Wi-Fi 212.19.134.52 
         # 188.130.234.184
-    elif [[ $1 = "bld" ]]; then
+    elif [[ $1 = "ada" ]]; then
         echo "Set BLD (EU) DNS"
-        networksetup -setdnsservers Wi-Fi 135.125.204.230 49.12.234.130
-    elif [[ $1 = "a-bld" ]]; then
+        networksetup -setdnsservers Wi-Fi 46.151.29.15 88.210.11.120
+    elif [[ $1 = "ric" || $1 = "bld-a" ]]; then
         echo "Set A-BLD) DNS"
-        networksetup -setdnsservers Wi-Fi 88.210.11.120 109.234.39.72 
+        networksetup -setdnsservers Wi-Fi 212.19.134.52 188.130.234.184
+    elif [[ $1 = "pre-bld" ]]; then
+        echo "Set PRE-BLD DNS"
+        networksetup -setdnsservers Wi-Fi 116.203.129.237
     elif [[ $1 = "-h" ]]; then
             echo -e "Use: with argument - bld or doh if empty will set Cloudflare and Google DNS"
             exit 1
@@ -81,7 +84,6 @@ main() {
         networksetup -setdnsservers Wi-Fi 1.1.1.1 8.8.2.2
     fi
 
-	
     # networksetup -setdnsservers Wi-Fi 135.125.204.230
     # networksetup -setdnsservers Wi-Fi 1.1.1.1
 
